@@ -1,0 +1,4 @@
+services:
+#    freelance.example:
+#        class: FreelanceBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]
