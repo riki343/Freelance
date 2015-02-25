@@ -1,12 +1,43 @@
 security:
+    encoders:
+        FreelanceBundle\Entity\User:
+            algorithm: sha512
+            encode_as_base64: false
+            iterations: 1
+
     providers:
-        in_memory:
-            memory: ~
+        user_db:
+            entity: { class: FreelanceBundle\Entity\User, property: username }
+
+    role_hierarchy:
+            ROLE_FREELANCER:  ROLE_USER
+            ROLE_CLIENT:      ROLE_USER
+            ROLE_ADMIN:       [ROLE_USER, ROLE_FREELANCER, ROLE_CLIENT, ROLE_ALLOWED_TO_SWITCH]
+            ROLE_SUPER_ADMIN: [ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
 
     firewalls:
         dev:
-            pattern: ^/(_(profiler|wdt|error)|css|images|js)/
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false
+
+        login:
+            pattern: ^/login$
+            anonymous: ~
+
+        homepage:
+            pattern: ^/
+            anonymous: ~
 
         default:
             anonymous: ~
+            http_basic: ~
+            form_login:
+                login_path: /login
+                check_path: /login_check
+
+            logout:
+                path: /logout
+                target: /
+
+
+    #access_control:
