@@ -24,10 +24,6 @@ security:
             pattern: ^/login$
             anonymous: ~
 
-        homepage:
-            pattern: ^/
-            anonymous: ~
-
         default:
             anonymous: ~
             http_basic: ~
@@ -40,4 +36,4 @@ security:
                 target: /
 
 
-    #access_control:
+    access_control:

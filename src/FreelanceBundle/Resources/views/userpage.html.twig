@@ -1,0 +1,21 @@
+{% extends '@Freelance/index.html.twig' %}
+
+{% block title %}Привет, {{ app.user.name ~ ' ' ~ app.user.surname }}{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="page-header">
+            <h1>
+                {{ app.user.name ~ ' ' ~ app.user.surname }}
+            </h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <h3>This is userpage</h3>
+                <div class="btn-group">
+                    <a href="{{ path('freelance_logout') }}" class="btn btn-default btn-primary">Выход</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,3 +1,26 @@
 freelance_homepage:
-    path:     /
+    path: /
     defaults: { _controller: FreelanceBundle:Index:index }
+
+freelance_signup:
+    path: /signup
+    defaults: { _controller: FreelanceBundle:Index:signup }
+
+freelance_signup_action:
+    path: /signup_action
+    defaults: { _controller: FreelanceBundle:Index:signupAction }
+
+freelance_login:
+    path: /login
+    defaults: { _controller: FreelanceBundle:Index:login }
+
+freelance_login_check:
+    path: /login_check
+    defaults: { _controller: FreelanceBundle:Index:loginCheck }
+
+freelance_logout:
+    path: /logout
+
+freelance_userpage:
+    path: /user
+    defaults: { _controller: FreelanceBundle:User:index }

@@ -1,7 +1,19 @@
-{% extends '@Freelance/index.html.twig' %}
+{% extends '@Freelance/layout.html.twig' %}
 
 {% block title %}Главная{% endblock %}
 
 {% block body %}
-    <h1>HOMEPAGE</h1>
+    <div class="container" style="width: 35%;">
+        <div class="page-header">
+            <h1>HOMEPAGE</h1>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="btn-group">
+                    <a href="{{ path('freelance_login') }}" class="btn btn-default btn-primary">Вход</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
 {% endblock %}
